@@ -1,0 +1,1 @@
+sync audio video dengan spike noise pertama.

